@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Infographic và video minh họa</title>
+	<style>
+		:root {
+			--background: #eef3f7;
+			--surface: #ffffff;
+			--text: #1d2939;
+			--muted: #667085;
+			--accent: #1677a8;
+			--border: #dbe5ec;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			background: linear-gradient(135deg, #e8f1f5, var(--background));
+			color: var(--text);
+			font-family: Georgia, "Times New Roman", serif;
+		}
+
+		main {
+			width: min(100% - 32px, 960px);
+			margin: 0 auto;
+			padding: 56px 0 48px;
+			text-align: center;
+		}
+
+		h1 {
+			margin: 0 0 14px;
+			color: #123d56;
+			font-size: clamp(2rem, 5vw, 3.4rem);
+			line-height: 1.1;
+		}
+
+		.intro {
+			max-width: 680px;
+			margin: 0 auto 36px;
+			color: var(--muted);
+			font-family: Arial, sans-serif;
+			font-size: 1.05rem;
+			line-height: 1.7;
+		}
+
+		.content {
+			display: grid;
+			gap: 28px;
+		}
+
+		.media-section {
+			padding: 24px;
+			border: 1px solid var(--border);
+			border-radius: 8px;
+			background: rgba(255, 255, 255, 0.92);
+			box-shadow: 0 12px 30px rgba(31, 63, 82, 0.08);
+		}
+
+		h2 {
+			margin: 0 0 18px;
+			color: var(--accent);
+			font-size: 1.45rem;
+		}
+
+		.infographic {
+			display: block;
+			width: 100%;
+			height: auto;
+			margin: 0 auto;
+			border-radius: 4px;
+		}
+
+		.video-frame {
+			position: relative;
+			width: 100%;
+			aspect-ratio: 16 / 9;
+			overflow: hidden;
+			background: #102a3a;
+		}
+
+		iframe {
+			width: 100%;
+			height: 100%;
+			border: 0;
+		}
+
+		footer {
+			margin-top: auto;
+			padding: 20px 16px;
+			border-top: 1px solid var(--border);
+			background: rgba(255, 255, 255, 0.7);
+			color: var(--muted);
+			font-family: Arial, sans-serif;
+			font-size: 0.9rem;
+			text-align: center;
+		}
+
+		@media (max-width: 600px) {
+			main {
+				width: min(100% - 20px, 960px);
+				padding: 36px 0 28px;
+			}
+
+			.media-section {
+				padding: 16px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1>Infographic và video minh họa</h1>
+		<p class="intro">
+			Cùng khám phá nội dung trực quan qua infographic và video được nhúng từ YouTube.
+		</p>
+
+		<div class="content">
+			<section class="media-section" aria-labelledby="infographic-title">
+				<h2 id="infographic-title">Infographic</h2>
+				<img
+					class="infographic"
+					src="Lab05_Ex2.1.png"
+					alt="Infographic của bài thực hành Lab 05"
+				>
+			</section>
+
+			<section class="media-section" aria-labelledby="video-title">
+				<h2 id="video-title">Video YouTube</h2>
+				<div class="video-frame">
+					<iframe
+						src="https://www.youtube.com/embed/AuwRjmGffP8"
+						title="Video YouTube minh họa"
+						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+						allowfullscreen
+					></iframe>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<footer>
+		<p>© 2026 Lab 05. Nội dung và hình ảnh thuộc bản quyền của tác giả tương ứng.</p>
+		<p>Trang được thực hiện với sự hỗ trợ của công cụ AI.</p>
+	</footer>
+</body>
+</html>
