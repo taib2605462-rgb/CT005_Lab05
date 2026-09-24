@@ -3,15 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Infographic và video minh họa</title>
+	<title>Hồ sơ cá nhân | Bùi Anh Tài</title>
 	<style>
 		:root {
-			--background: #eef3f7;
-			--surface: #ffffff;
-			--text: #1d2939;
-			--muted: #667085;
-			--accent: #1677a8;
-			--border: #dbe5ec;
+			--ink: #182a3a;
+			--muted: #64748b;
+			--accent: #c95d3b;
+			--accent-dark: #963b28;
+			--paper: #fffdf8;
+			--line: #eadfd3;
+			--background: #f3eee7;
 		}
 
 		* {
@@ -23,131 +24,253 @@
 			min-height: 100vh;
 			display: flex;
 			flex-direction: column;
-			background: linear-gradient(135deg, #e8f1f5, var(--background));
-			color: var(--text);
+			background: linear-gradient(140deg, #f8f3eb 0%, var(--background) 55%, #e6f0ef 100%);
+			color: var(--ink);
 			font-family: Georgia, "Times New Roman", serif;
 		}
 
 		main {
-			width: min(100% - 32px, 960px);
+			width: min(100% - 32px, 1100px);
 			margin: 0 auto;
 			padding: 56px 0 48px;
+		}
+
+		.profile {
+			padding: 34px 28px;
+			border-bottom: 1px solid var(--line);
 			text-align: center;
 		}
 
+		.eyebrow {
+			margin: 0 0 12px;
+			color: var(--accent-dark);
+			font-family: Arial, sans-serif;
+			font-size: 0.78rem;
+			font-weight: 700;
+			letter-spacing: 0.14em;
+			text-transform: uppercase;
+		}
+
 		h1 {
-			margin: 0 0 14px;
-			color: #123d56;
-			font-size: clamp(2rem, 5vw, 3.4rem);
-			line-height: 1.1;
+			margin: 0;
+			font-size: clamp(2.4rem, 6vw, 4.8rem);
+			line-height: 1;
 		}
 
 		.intro {
-			max-width: 680px;
-			margin: 0 auto 36px;
+			max-width: 650px;
+			margin: 20px auto 24px;
 			color: var(--muted);
 			font-family: Arial, sans-serif;
 			font-size: 1.05rem;
 			line-height: 1.7;
 		}
 
-		.content {
-			display: grid;
-			gap: 28px;
+		.student-info {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 10px 28px;
+			margin: 0;
+			font-family: Arial, sans-serif;
+			font-size: 0.95rem;
 		}
 
-		.media-section {
-			padding: 24px;
-			border: 1px solid var(--border);
-			border-radius: 8px;
-			background: rgba(255, 255, 255, 0.92);
-			box-shadow: 0 12px 30px rgba(31, 63, 82, 0.08);
+		.student-info strong {
+			color: var(--accent-dark);
+		}
+
+		.products-heading {
+			margin: 42px 0 22px;
+			text-align: center;
 		}
 
 		h2 {
-			margin: 0 0 18px;
-			color: var(--accent);
-			font-size: 1.45rem;
+			margin: 0 0 8px;
+			font-size: 2rem;
+		}
+
+		.products-heading p {
+			margin: 0;
+			color: var(--muted);
+			font-family: Arial, sans-serif;
+		}
+
+		.products {
+			display: grid;
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+			gap: 20px;
+		}
+
+		.product {
+			min-width: 0;
+			padding: 20px;
+			border: 1px solid var(--line);
+			border-radius: 8px;
+			background: rgba(255, 253, 248, 0.92);
+			box-shadow: 0 14px 28px rgba(82, 60, 38, 0.08);
+		}
+
+		.product h3 {
+			margin: 0 0 16px;
+			color: var(--accent-dark);
+			font-size: 1.25rem;
+		}
+
+		.product-preview {
+			width: 100%;
+			height: 360px;
+			border: 1px solid var(--line);
+			background: #fff;
+		}
+
+		.pdf-preview {
+			display: block;
+			width: 100%;
+			height: 100%;
+			border: 0;
 		}
 
 		.infographic {
 			display: block;
 			width: 100%;
-			height: auto;
-			margin: 0 auto;
-			border-radius: 4px;
+			height: 100%;
+			object-fit: contain;
 		}
 
 		.video-frame {
 			position: relative;
 			width: 100%;
 			aspect-ratio: 16 / 9;
-			overflow: hidden;
-			background: #102a3a;
+			background: #152d38;
 		}
 
-		iframe {
+		.video-frame iframe {
 			width: 100%;
 			height: 100%;
 			border: 0;
 		}
 
+		.product-link {
+			display: inline-block;
+			margin-top: 14px;
+			color: var(--accent-dark);
+			font-family: Arial, sans-serif;
+			font-size: 0.9rem;
+			font-weight: 700;
+		}
+
 		footer {
 			margin-top: auto;
 			padding: 20px 16px;
-			border-top: 1px solid var(--border);
-			background: rgba(255, 255, 255, 0.7);
+			border-top: 1px solid var(--line);
+			background: rgba(255, 253, 248, 0.72);
 			color: var(--muted);
 			font-family: Arial, sans-serif;
-			font-size: 0.9rem;
+			font-size: 0.88rem;
+			line-height: 1.6;
 			text-align: center;
+		}
+
+		footer p {
+			margin: 2px 0;
+		}
+
+		@media (max-width: 850px) {
+			.products {
+				grid-template-columns: 1fr;
+			}
+
+			.product-preview {
+				height: 460px;
+			}
+
+			.video-frame {
+				height: auto;
+			}
 		}
 
 		@media (max-width: 600px) {
 			main {
-				width: min(100% - 20px, 960px);
-				padding: 36px 0 28px;
+				width: min(100% - 20px, 1100px);
+				padding: 28px 0 36px;
 			}
 
-			.media-section {
+			.profile {
+				padding: 26px 14px;
+			}
+
+			.product {
 				padding: 16px;
+			}
+
+			.product-preview {
+				height: 360px;
 			}
 		}
 	</style>
 </head>
 <body>
 	<main>
-		<h1>Infographic và video minh họa</h1>
-		<p class="intro">
-			Cùng khám phá nội dung trực quan qua infographic và video được nhúng từ YouTube.
-		</p>
+		<header class="profile">
+			<p class="eyebrow">Trang giới thiệu cá nhân</p>
+			<h1>Bùi Anh Tài</h1>
+			<p class="intro">
+				Chào mừng bạn đến với trang giới thiệu các sản phẩm học tập của tôi trong Lab 05.
+			</p>
+			<p class="student-info">
+				<span><strong>Mã số sinh viên:</strong> B2605462</span>
+				<span><strong>Lớp:</strong> DI26D2A2</span>
+			</p>
+		</header>
 
-		<div class="content">
-			<section class="media-section" aria-labelledby="infographic-title">
-				<h2 id="infographic-title">Infographic</h2>
-				<img
-					class="infographic"
-					src="Lab05_Ex2.1.png"
-					alt="Infographic của bài thực hành Lab 05"
-				>
-			</section>
+		<section class="products-heading" aria-labelledby="products-title">
+			<h2 id="products-title">Ba sản phẩm đã tạo</h2>
+			<p>Tổng hợp bài làm dưới dạng tài liệu, hình ảnh và video.</p>
+		</section>
 
-			<section class="media-section" aria-labelledby="video-title">
-				<h2 id="video-title">Video YouTube</h2>
-				<div class="video-frame">
+		<section class="products" aria-label="Danh sách sản phẩm">
+			<article class="product">
+				<h3>1. Tài liệu PDF</h3>
+				<div class="product-preview">
+					<iframe
+						class="pdf-preview"
+						src="Lab05_Ex1.2.pdf"
+						title="Tài liệu Lab05 Ex1.2"
+					></iframe>
+				</div>
+				<a class="product-link" href="Lab05_Ex1.2.pdf" target="_blank" rel="noopener">Mở file PDF</a>
+			</article>
+
+			<article class="product">
+				<h3>2. Infographic</h3>
+				<div class="product-preview">
+					<img
+						class="infographic"
+						src="Lab05_Ex2.1.png"
+						alt="Infographic của bài thực hành Lab 05"
+					>
+				</div>
+				<a class="product-link" href="Lab05_Ex2.1.png" target="_blank" rel="noopener">Xem ảnh kích thước đầy đủ</a>
+			</article>
+
+			<article class="product">
+				<h3>3. Video YouTube</h3>
+				<div class="product-preview video-frame">
 					<iframe
 						src="https://www.youtube.com/embed/AuwRjmGffP8"
-						title="Video YouTube minh họa"
+						title="Video YouTube của Bùi Anh Tài"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 						allowfullscreen
 					></iframe>
 				</div>
-			</section>
-		</div>
+				<a class="product-link" href="https://youtu.be/AuwRjmGffP8" target="_blank" rel="noopener">Mở video trên YouTube</a>
+			</article>
+		</section>
 	</main>
 
 	<footer>
-		<p>© 2026 Lab 05. Nội dung và hình ảnh thuộc bản quyền của tác giả tương ứng.</p>
+		<p>© 2026 Bùi Anh Tài. Nội dung và sản phẩm thuộc bản quyền của tác giả tương ứng.</p>
 		<p>Trang được thực hiện với sự hỗ trợ của công cụ AI.</p>
 	</footer>
 </body>
